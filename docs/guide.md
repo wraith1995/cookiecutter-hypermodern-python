@@ -843,8 +843,6 @@ See the table below for an overview of the dependencies of generated projects:
   - A utility for ensuring Google-style docstrings stay up to date with the source code.
 - - [flake8]
   - the modular source code checker: pep8 pyflakes and co
-- - [flake8-bandit]
-  - Automated security testing with bandit and flake8.
 - - [flake8-bugbear]
   - A plugin for flake8 finding likely bugs and design problems in your program.
 - - [flake8-docstrings]
@@ -1824,9 +1822,6 @@ and links to their lists of error codes.
 - - [darglint]
   - Detect inaccurate docstrings
   - [DAR][darglint codes]
-- - [Bandit] / [flake8-bandit]
-  - Detect common security issues
-  - [S][bandit codes]
 
 :::
 
@@ -1937,7 +1932,7 @@ The {{ HPC }} limits code complexity to a value of 10.
 
 (darglint-integration)=
 
-### darglint
+#### darglint ####
 
 [darglint] checks that docstring descriptions match function definitions.
 The tool has its own configuration file, named `.darglint`.
@@ -1949,18 +1944,6 @@ Multi-line docstrings must
 specify the function signatures completely and correctly,
 using [Google docstring style].
 
-### Bandit
-
-[Bandit] is a tool designed to
-find common security issues in Python code,
-and integrated via the [flake8-bandit] extension.
-
-[Error codes][bandit codes] are prefixed by `S` for "security".
-(The prefix `B` for "bandit" is used
-when Bandit is run as a stand-alone tool.)
-
-The {{ HPC }} disables `S101` (use of assert) for the test suite,
-as [pytest] uses assertions to verify expectations in tests.
 
 (type-checking-with-mypy)=
 
