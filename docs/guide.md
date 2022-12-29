@@ -867,8 +867,6 @@ See the table below for an overview of the dependencies of generated projects:
   - pytest: simple powerful testing with Python
 - - [pyupgrade]
   - A tool to automatically upgrade syntax for newer versions.
-- - [safety]
-  - Checks installed dependencies for known vulnerabilities.
 - - [sphinx]
   - Python documentation generator
 - - [sphinx-autobuild]
@@ -1203,10 +1201,6 @@ The following table gives an overview of the available Nox sessions:
   - Lint with [pre-commit]
   - `3.10`
   - ✓
-- - [safety](the-safety-session)
-  - Scan dependencies with [Safety]
-  - `3.10`
-  - ✓
 - - [tests](the-tests-session)
   - Run tests with [pytest]
   - `3.7` … `3.10`
@@ -1288,47 +1282,6 @@ $ nox --session=mypy -- src/<package>/__main__.py
 ```
 
 (the-pre-commit-session)=
-
-### The pre-commit session
-
-[pre-commit] is a multi-language linter framework and a Git hook manager.
-Learn more about it in the section [Linting with pre-commit](linting-with-pre-commit).
-
-Run pre-commit from Nox using the `pre-commit` session:
-
-```console
-$ nox --session=pre-commit
-```
-
-This session always runs with the current stable release of Python.
-
-Use the separator `--` to pass additional options to `pre-commit`.
-For example, the following command installs the pre-commit hooks,
-so they run automatically on every commit you make:
-
-```console
-$ nox --session=pre-commit -- install
-```
-
-(the-safety-session)=
-
-### The safety session
-
-[Safety] checks the dependencies of your project for known security vulnerabilities,
-using a curated database of insecure Python packages.
-The {{ HPC }} uses the [poetry export] command
-to convert Poetry's lock file to a [requirements file],
-for consumption by Safety.
-
-Run [Safety] using the `safety` session:
-
-```console
-$ nox --session=safety
-```
-
-This session always runs with the current stable release of Python.
-
-(the-tests-session)=
 
 ### The tests session
 
@@ -1414,6 +1367,29 @@ For details, see the sections about
 [The Tests workflow](the-tests-workflow).
 
 (the-typeguard-session)=
+
+### The pre-commit session
+
+[pre-commit] is a multi-language linter framework and a Git hook manager.
+Learn more about it in the section [Linting with pre-commit](linting-with-pre-commit).
+
+Run pre-commit from Nox using the `pre-commit` session:
+
+```console
+$ nox --session=pre-commit
+```
+
+This session always runs with the current stable release of Python.
+
+Use the separator `--` to pass additional options to `pre-commit`.
+For example, the following command installs the pre-commit hooks,
+so they run automatically on every commit you make:
+
+```console
+$ nox --session=pre-commit -- install
+```
+
+(the-tests-session)=
 
 ### The typeguard session
 
@@ -2573,8 +2549,6 @@ You can also read the articles on [this blog][hypermodern python blog].
 [actions/setup-python]: https://github.com/actions/setup-python
 [actions/upload-artifact]: https://github.com/actions/upload-artifact
 [autodoc]: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
-[bandit codes]: https://bandit.readthedocs.io/en/latest/plugins/index.html#complete-test-plugin-listing
-[bandit]: https://github.com/PyCQA/bandit
 [bash]: https://www.gnu.org/software/bash/
 [batchelder include]: https://nedbatchelder.com/blog/202008/you_should_include_your_tests_in_coverage.html
 [black]: https://github.com/psf/black
@@ -2606,7 +2580,6 @@ You can also read the articles on [this blog][hypermodern python blog].
 [editable install]: https://pip.pypa.io/en/stable/cli/pip_install/#install-editable
 [end-of-file-fixer]: https://github.com/pre-commit/pre-commit-hooks#end-of-file-fixer
 [flake8 configuration]: https://flake8.pycqa.org/en/latest/user/configuration.html
-[flake8-bandit]: https://github.com/tylerwince/flake8-bandit
 [flake8-bugbear codes]: https://github.com/PyCQA/flake8-bugbear#list-of-warnings
 [flake8-bugbear]: https://github.com/PyCQA/flake8-bugbear
 [flake8-docstrings]: https://gitlab.com/pycqa/flake8-docstrings
@@ -2709,7 +2682,6 @@ You can also read the articles on [this blog][hypermodern python blog].
 [release-drafter/release-drafter]: https://github.com/release-drafter/release-drafter
 [requirements file]: https://pip.readthedocs.io/en/stable/user_guide/#requirements-files
 [restructuredtext]: https://docutils.sourceforge.io/rst.html
-[safety]: https://github.com/pyupio/safety
 [salsify/action-detect-and-tag-new-version]: https://github.com/salsify/action-detect-and-tag-new-version
 [schlawack semantic]: https://hynek.me/articles/semver-will-not-save-you/
 [schreiner constraints]: https://iscinumpy.dev/post/bound-version-constraints/

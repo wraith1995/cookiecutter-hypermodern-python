@@ -45,13 +45,13 @@
 [cookiecutter]: https://github.com/audreyr/cookiecutter
 [hypermodern python]: https://medium.com/@cjolowicz/hypermodern-python-d44485d9d769
 
-## Usage
+### Usage ###
 
 ```console
 $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2022.6.3
 ```
 
-## Features
+#### Features ####
 
 <!-- features-begin -->
 
@@ -72,7 +72,6 @@ $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2022.6.3
 - Static type-checking with [mypy]
 - Runtime type-checking with [Typeguard]
 - Automated Python syntax upgrades with [pyupgrade]
-- Security audit with [Bandit] and [Safety]
 - Check documentation examples with [xdoctest]
 - Generate API documentation with [autodoc] and [napoleon]
 - Generate command-line reference with [sphinx-click]
@@ -81,7 +80,6 @@ $ cookiecutter gh:cjolowicz/cookiecutter-hypermodern-python --checkout=2022.6.3
 The template supports Python 3.7, 3.8, 3.9, and 3.10.
 
 [autodoc]: https://www.sphinx-doc.org/en/master/usage/extensions/autodoc.html
-[bandit]: https://github.com/PyCQA/bandit
 [black]: https://github.com/psf/black
 [click]: https://click.palletsprojects.com/
 [codecov]: https://codecov.io/
@@ -104,7 +102,6 @@ The template supports Python 3.7, 3.8, 3.9, and 3.10.
 [pyupgrade]: https://github.com/asottile/pyupgrade
 [read the docs]: https://readthedocs.org/
 [release drafter]: https://github.com/release-drafter/release-drafter
-[safety]: https://github.com/pyupio/safety
 [sphinx]: http://www.sphinx-doc.org/
 [sphinx-click]: https://sphinx-click.readthedocs.io/
 [testpypi]: https://test.pypi.org/
